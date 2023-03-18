@@ -1,2 +1,26 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых,
+//  заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+
+// для начала нужно решить уравнение x=(b2-b1)/(k1-k2);
+
+
+double EnteringNumber(string name)
+{
+    System.Console.Write($"Введите {name}: ");
+    return Convert.ToDouble(Console.ReadLine());
+}
+
+void IntersectionPoint()
+{
+    double b1 = EnteringNumber("b1");
+    double k1 = EnteringNumber("k1");
+    double b2 = EnteringNumber("b2");
+    double k2 = EnteringNumber("k2");
+    double xСoordinate = (b2-b1)/(k1-k2);
+    double yСoordinate = k1 * xСoordinate + b1;
+    System.Console.Write($"Координаты точки пересечения прямых: ({xСoordinate}; {yСoordinate}) ");
+}
+
+
+IntersectionPoint();
